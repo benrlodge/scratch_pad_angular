@@ -1,0 +1,28 @@
+.block{
+	display: block;
+}
+.align-right{
+	text-align: right;
+}
+
+.float-right{
+	float: right;
+}
+
+.flaot-left{
+	float: left;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+ 
+
+* html .clearfix {
+    height: 1%;
+}

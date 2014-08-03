@@ -1,0 +1,15 @@
+@import "colors";
+
+.m-notes--preview{
+	width: 100%;
+	background: $offwhite-light;
+	padding: 20px 30px;
+	border-bottom: 1px solid $blue-dark-2;
+
+}
+
+
+.notes--content{
+	background: $offwhite;
+	padding: 10px;
+}

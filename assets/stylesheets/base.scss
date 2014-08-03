@@ -1,0 +1,50 @@
+@import "colors";
+
+
+*{
+	box-sizing: border-box;
+	color: $base-font-color;
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+html{
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background: $blue-dark;
+  border: 1px solid $blue-dark;
+}
+
+h2, h3, h4{
+}
+
+h4{
+	font-weight: 600;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+
+	li{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+}
+
+small{
+	font-size: 12px;
+}
+
+button{
+	border-radius: 5px;
+	border: 0;
+	outline: 0;
+	background: $offwhite;
+	padding: 4px 12px;
+	box-shadow: 0px 0px 0px 1px rgba(50, 80, 110, 0.3);
+}

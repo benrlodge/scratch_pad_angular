@@ -1,0 +1,25 @@
+@import "colors";
+
+.nav-primary{
+	background: $blue-lightest;
+	padding: 10px;	
+	border-bottom: 2px solid $blue-dark-2;
+	font-family: 'Roboto', sans-serif;
+	
+}
+
+.nav-primary__list{
+	padding: 10px 0;
+
+	a{
+		color: #385370;
+		text-decoration: none;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+	li{
+		margin: 0 20px;
+	}
+
+}

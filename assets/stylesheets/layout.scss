@@ -1,0 +1,40 @@
+@import "colors";
+
+.inline-list{
+	li{
+		display: inline-block;
+	}
+}
+
+
+.l-wrapper{
+	width: 1000px;
+	margin: 30px auto 0 auto;
+	overflow: hidden;
+	box-shadow: 0 0 10px rgba(50,50,50,.3);
+}
+
+.l-column{
+	height: 600px;
+}
+
+.l-note-entry{
+	float: left;
+	width: 400px;
+	background: $blue-light;
+	padding: 10px 30px 0 30px;
+}
+
+// .l-notes-container{
+// 	overflow: scroll;
+// }
+
+
+.l-notes{
+	float: left;
+	width: 600px;
+	overflow: scroll;
+	background: $offwhite-dark;
+	box-shadow: -3px 0px 5px 0px rgba(31, 45, 61, 0.15);
+
+}
