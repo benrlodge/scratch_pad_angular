@@ -27,24 +27,43 @@ app.controller("PreviewController", function($scope){
 		{
 			id: 0,
 			title: 'Why I love cheese',
-			content: 'Because it is really good. duh.'
+			content: 'Because it is really good. duh.',
+			status: 'active'
 		},
 		{
 			id: 1,
 			title: 'Why does 5+5 = 10',
-			content: 'Because Math said so'
+			content: 'Because Math said so',
+			status: 'active'
 		},
 		{
 			id: 2,
-			title: 'Why is the sky is blue',
-			content: 'Because it was painted blue'
+			title: 'How to do karate kicks',
+			content: 'Watch Chuck Norris',
+			status: 'archived'
 		},
-		{
-			id: 3,
-			title: 'I like karate',
-			content: 'Yea, totally.'
-		}
-	]
+
+	];
+
+	$scope.activeNotes = function (note) {
+    	return (note.status != 'active');
+	}
+	$scope.archivedNotes = function (note) {
+    	return (note.status === 'archived');
+	}
+
+
+	$scope.add = function(){
+		$scope.notes.push({
+			title: $scope.newTitle,
+			content: $scope.newContent,
+			status: 'active'
+		});
+
+		$('.m-notes-form--input-title').val('').focus();
+		$('.m-notes-form--input-content').val('');
+
+	}
 
 
 });
