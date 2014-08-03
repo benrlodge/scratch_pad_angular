@@ -1,0 +1,26 @@
+
+		<div class='l-notes-container'>
+			
+			
+			<div ng-repeat='note in notes | filter: {$id: recordId}:true'>
+
+			    
+
+
+				<article class='m-notes--preview clearfix'>
+					<h5>Name: {{note.key}} </h5>
+					<h4>{{note.title}} </h4>
+					<p>{{note.content }} </p>
+
+					<a href="" ng-href="#/notes/{{name}}" class='m-notes--expand float-right'>Open Full Note</a>
+					<br>
+					<button data-ng-click='destroyNote(note)'>Delete Note</button>
+					<button data-ng-click='archiveNote(note)'>Archive Note</button>
+					<p><small>Status: {{note.status}} </small></p>
+				</article>
+
+
+			</div>
+
+
+		</div>

@@ -4,17 +4,16 @@
 
 		<div class='l-notes-container'>
 			
-			<div ng-repeat='note in notes | filter:searchNotes | filter:activeNotes'>
+			<div ng-repeat='(name, note) in notes | filter:searchNotes | filter:activeNotes'>
 				
 				<article class='m-notes--preview clearfix'>
 					<h4>{{note.title}} </h4>
-					<p>{{note.content}}</p>
+					<p>{{note.content | limitTo: 300}}...</p>
 
-					<a href="#/notes/{{note.id}}" class='m-notes--expand float-right'>Open Full Note</a>
-
+					<a href="" ng-href="#/notes/{{note.$id}}" class='m-notes--expand float-right'>Open Full Note</a>
 					<br>
-					<button data-id="{{note.id}}" data-ng-click='destroyNote(note)'>Delete Note</button>
-					<button data-id="{{note.id}}" data-ng-click='archiveNote(note)'>Archive Note</button>
+					<button data-ng-click='destroyNote(note)'>Delete Note</button>
+					<button data-ng-click='archiveNote(note)'>Archive Note</button>
 					<p><small>Status: {{note.status}} </small></p>
 				</article>
 

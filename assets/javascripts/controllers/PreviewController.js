@@ -17,7 +17,7 @@ app.controller("PreviewController", function($scope, $firebase) {
 
 	$scope.addNote = function(){
 		log('Adding a new note');
-		
+
 		$scope.notes.$add({
 			title: $scope.newTitle,
 			content: $scope.newContent,
@@ -34,7 +34,6 @@ app.controller("PreviewController", function($scope, $firebase) {
 		id.status = 'archived';
 		$scope.notes.$save(id);
 	}
-
 
 
 
