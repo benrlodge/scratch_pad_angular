@@ -33,35 +33,11 @@ app.config(['$routeProvider',
 
 app.controller("PreviewController", function($scope, $firebase) {
 
-    var fireRef = new Firebase("https://incandescent-fire-3534.firebaseio.com/");
-    
+	// Fire it up
+    var fireRef = new Firebase("https://incandescent-fire-3534.firebaseio.com/");    
 	var sync = $firebase(fireRef);
-
-	// $scope.data = sync.$asObject();
 	$scope.notes = sync.$asArray();
 
-
-	// $scope.notes = [
-	// 	{
-	// 		id: 0,
-	// 		title: 'Why I love cheese',
-	// 		content: 'Because it is really good. duh.',
-	// 		status: 'active'
-	// 	},
-	// 	{
-	// 		id: 1,
-	// 		title: 'Why does 5+5 = 10',
-	// 		content: 'Because Math said so',
-	// 		status: 'active'
-	// 	},
-	// 	{
-	// 		id: 2,
-	// 		title: 'How to do karate kicks',
-	// 		content: 'Watch Chuck Norris',
-	// 		status: 'archived'
-	// 	},
-
-	// ];
 
 	$scope.activeNotes = function (note) {
     	return (note.status === 'active');
@@ -72,18 +48,40 @@ app.controller("PreviewController", function($scope, $firebase) {
 	}
 
 	$scope.addNote = function(){
-
 		$scope.notes.$add({
 			title: $scope.newTitle,
 			content: $scope.newContent,
 			status: 'active'
 		});
-
-		$('.m-notes-form--input-title').val('').focus();
-		$('.m-notes-form--input-content').val('');
-
+		$scope.clearNoteInput('focus');
 	}
 
+	$scope.editNote = function(id){
+	}
+
+
+	$scope.archiveNote = function(id){
+		id.status = 'archived';
+		$scope.notes.$save(id);
+	}
+
+
+
+
+	$scope.destroyNote = function (id) {
+		log('destorying note' + id);
+		$scope.notes.$remove(id);
+	};
+
+
+	// Helpers
+	$scope.clearNoteInput = function(state){
+		$('.m-notes-form--input-title').val('');
+		$('.m-notes-form--input-content').val('');
+		if (state === 'focus'){
+			$('.m-notes-form--input-title').focus();	
+		}	
+	}
 
     // Bind the app to the firebase provider.
     $scope.app = $firebase(fireRef);    

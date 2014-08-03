@@ -9,6 +9,7 @@
 			<input type='text' ng-model='newTitle' class='m-notes-form--input-title' placeholder='Title...'> <br>
 			<textarea ng-model='newContent' class='m-notes-form--input-content' placeholder='Notes...'></textarea>
 			<button data-ng-click='addNote()' type='button' class='m-notes-form--btn-submit'>Add Note</button>
+
 		</div>
 	</div> <!-- // .l-note-entry -->
 
@@ -33,9 +34,9 @@
 					<a href="#/notes/{{note.id}}" class='m-notes--expand float-right'>Open Full Note</a>
 
 					<br>
-					<button data-id="{{note.id}}" class='m-notes--delete'>Delete Note</button>
-					<button data-id="{{note.id}}" class='m-notes--archive'>Archive Note</button>
-					<p>Status: </p>
+					<button data-id="{{note.id}}" data-ng-click='destroyNote(note)'>Delete Note</button>
+					<button data-id="{{note.id}}" data-ng-click='archiveNote(note)'>Archive Note</button>
+					<p><small>Status: {{note.status}} </small></p>
 				</article>
 
 			</div>
