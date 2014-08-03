@@ -9,29 +9,45 @@
         <title>Notepad</title>
         <meta name="description" content="">
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1" />
-
         <link rel="stylesheet" type="text/css" href="assets/stylesheets/main.css">
-
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     </head>
+    
+
+	
+    
     <body ng-app='NotesApp'>
         
-
-
-
+		
 
 		<div class='l-wrapper'>
 
 			<nav class='nav-primary'>
 				<ul class='nav-primary__list inline-list'>
 					<li> <a href="/apps/notepad/#">Notes</a> </li>
+					<li> <a href="/apps/notepad/#/notes/archive">Archived Notes</a> </li>
 				</ul>
 			</nav>
 			
 
+
 			<div id="app-view">
-				<div ng-view></div>
-			</div>
+
+				<div ui-view>
+				
+					<!-- LEFT COLUMN -->
+					<div class='l-column l-note-entry'>	
+							<div ui-view="viewLeft"></div>
+					</div> <!-- // .l-note-entry -->
+
+
+					<!-- RIGHT COLUMN -->				
+					<div class='l-column l-notes'>
+						<div ui-view="viewRight"></div>
+					</div> <!-- // .l-notes -->
+
+				</div>
+
+			</div> <!-- //app-view -->
 
 
 
@@ -43,18 +59,24 @@
 
 
 	
-	<script type="text/javascript" src="assets/javascripts/lib/jquery-2.1.1.js"></script>
-	<script type="text/javascript" src="assets/javascripts/lib/angular.min.js"></script>
+	<script src="assets/javascripts/lib/jquery-2.1.1.js"></script>
+	<script src="assets/javascripts/lib/angular.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+	
+
 	<script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
 	<script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
 
 
 
-	<script type="text/javascript" src="assets/javascripts/lib/angular-resource.js"></script>
-	<script type="text/javascript" src="assets/javascripts/lib/angular-route.min.js"></script>
+	<script src="assets/javascripts/lib/angular-resource.js"></script>
+	<script src="assets/javascripts/lib/angular-route.min.js"></script>
 	
-	<script type="text/javascript" src="assets/javascripts/helpers.js"></script>
-	<script type="text/javascript" src="assets/javascripts/application.js"></script>
+	<script src="assets/javascripts/helpers.js"></script>
+	<script src="assets/javascripts/application.js"></script>
+	<script src="assets/javascripts/routes.js"></script>
+	<script src="assets/javascripts/controllers/PreviewController.js"></script>
+	<script src="assets/javascripts/controllers/ArchiveController.js"></script>
 
 
 
