@@ -11,10 +11,6 @@ app.controller("PreviewController", function($scope, $firebase) {
     	return (note.status === 'active');
 	}
 
-	$scope.archivedNotes = function (note) {
-    	return (note.status === 'archived');
-	}
-
 	$scope.addNote = function(){
 		log('Adding a new note');
 

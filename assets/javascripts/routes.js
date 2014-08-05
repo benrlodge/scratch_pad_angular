@@ -4,21 +4,25 @@
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
  
-
-
-	.state('login', {
+	.state('home', {
 	  url: '/',
 	  views: {
-      	"inner-full": { 
-      		templateUrl: "assets/partials/admin/login.html",
-      		controller: 'LoginController'
-      	}
+      	"inner-viewLeft": { 
+      		templateUrl: "assets/partials/notes/notes-entry.html",
+      		controller: 'PreviewController'
+      	},
+        
+        "inner-viewRight": { 
+        	templateUrl: "assets/partials/notes/notes-list-active.html",
+        	controller: 'PreviewController'
+        }
+
 	  }
 	})
 
+
 	.state('note', {
 		url: '/notes/:id',
-		controller: 'NoteController',
 	    views: {
 	      	"inner-viewLeft": { 
 	      		templateUrl: "assets/partials/notes/notes-entry.html",
@@ -33,24 +37,26 @@ app.config(function($stateProvider, $urlRouterProvider) {
 	})
 
 
-	.state('home', {
-	  url: '/dashboard',
-	  controller: 'PreviewController',
-	  views: {
-      	"inner-viewLeft": { 
-      		templateUrl: "assets/partials/notes/notes-entry.html",
-      		controller: 'PreviewController'
-      	},
+
+	// .state('archive', {
+	//   url: '/notes/archive',
+	//   views: {
+ //      	"inner-viewLeft": { 
+ //      		templateUrl: "assets/partials/notes/notes-entry.html",
+ //      		controller: 'PreviewController'
+ //      	},
         
-        "inner-viewRight": { 
-        	templateUrl: "assets/partials/notes/notes-list-active.html",
-        	controller: 'PreviewController'
-        }
+ //        "inner-viewRight": { 
+ //        	// templateUrl: "assets/partials/notes/notes-list-archive.html",
+ //        	// controller: 'archiveController'
+ //        }
 
-	  }
-	});
+	//   }
+	// });
 
 
-   $urlRouterProvider.otherwise('/');
+	
+
+ //   $urlRouterProvider.otherwise('/');
 
 });

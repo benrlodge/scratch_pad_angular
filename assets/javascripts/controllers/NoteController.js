@@ -7,19 +7,21 @@ app.controller("NoteController", function($scope, $firebase, $stateParams) {
 	$scope.notes = sync.$asArray();
 
 	
-	$scope.recordId = $stateParams.id;
-	// log('id: ' + $stateParams.id)
-	// log($scope);
+	$scope.record = $stateParams.id;
+	log('id: ' + $stateParams.id)
+	log($scope);
 
 	// log($scope.notes(record));
 
 	$scope.editNote = function(id){
 	}
 
+
 	$scope.archiveNote = function(id){
 		id.status = 'archived';
 		$scope.notes.$save(id);
 	}
+
 
 	$scope.destroyNote = function (id) {
 		log('destorying note' + id);
