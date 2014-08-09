@@ -4,25 +4,10 @@
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
  
-	.state('home', {
-	  url: '/',
-	  views: {
-      	"inner-viewLeft": { 
-      		templateUrl: "assets/partials/notes/notes-entry.html",
-      		controller: 'PreviewController'
-      	},
-        
-        "inner-viewRight": { 
-        	templateUrl: "assets/partials/notes/notes-list-active.html",
-        	controller: 'PreviewController'
-        }
-
-	  }
-	})
-
 
 	.state('note', {
 		url: '/notes/:id',
+		controller: 'NoteController',
 	    views: {
 	      	"inner-viewLeft": { 
 	      		templateUrl: "assets/partials/notes/notes-entry.html",
@@ -38,25 +23,24 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 
 
-	// .state('archive', {
-	//   url: '/notes/archive',
-	//   views: {
- //      	"inner-viewLeft": { 
- //      		templateUrl: "assets/partials/notes/notes-entry.html",
- //      		controller: 'PreviewController'
- //      	},
+	.state('home', {
+	  url: '/',
+	  controller: 'PreviewController',
+	  views: {
+      	"inner-viewLeft": { 
+      		templateUrl: "assets/partials/notes/notes-entry.html",
+      		controller: 'PreviewController'
+      	},
         
- //        "inner-viewRight": { 
- //        	// templateUrl: "assets/partials/notes/notes-list-archive.html",
- //        	// controller: 'archiveController'
- //        }
+        "inner-viewRight": { 
+        	templateUrl: "assets/partials/notes/notes-list-active.html",
+        	controller: 'PreviewController'
+        }
 
-	//   }
-	// });
+	  }
+	});
 
 
-	
-
- //   $urlRouterProvider.otherwise('/');
+   $urlRouterProvider.otherwise('/');
 
 });

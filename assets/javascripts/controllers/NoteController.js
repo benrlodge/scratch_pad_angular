@@ -11,10 +11,6 @@ app.controller("NoteController", function($scope, $firebase, $stateParams) {
 	log('id: ' + $stateParams.id)
 	log($scope);
 
-	// log($scope.notes(record));
-
-	$scope.editNote = function(id){
-	}
 
 
 	$scope.archiveNote = function(id){
