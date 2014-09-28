@@ -1,0 +1,1 @@
+This is my first Angular app I worked on. I used firebase for persistence.

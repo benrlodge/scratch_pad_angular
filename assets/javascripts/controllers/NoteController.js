@@ -24,7 +24,6 @@ app.controller("NoteController", function($scope, $firebase, $stateParams) {
 		$scope.notes.$remove(id);
 	};
 
-
     // Bind the app to the firebase provider.
     $scope.app = $firebase(fireRef);    
 
